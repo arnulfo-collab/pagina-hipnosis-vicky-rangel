@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Hipnosis Integral Rangel</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ============================================================
+       PRINT-READY — Blog Hipnosis Integral Rangel
+       Layout paginado para exportar a PDF (carta vertical).
+       ============================================================ */
+    @page { size: A4 portrait; margin: 1.4cm; }
+
+    html, body { background: #fff; }
+
+    /* Oculta el chrome interactivo que no aplica en impresión */
+    .topbar, .whatsapp-float, .skip-link, .nav-toggle { display: none !important; }
+
+    /* Resetea animaciones de aparición */
+    .reveal { opacity: 1 !important; transform: none !important; }
+
+    /* Fuerza impresión de colores de marca */
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    /* ── Encabezado del documento ──────────────── */
+    .print-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .print-head img { height: 60px; width: auto; }
+    .print-head .ph-text { line-height: 1.2; }
+    .print-head .ph-text strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--ink);
+      display: block;
+      letter-spacing: 0.03em;
+    }
+    .print-head .ph-text span {
+      font-size: 0.8rem;
+      color: var(--primary-dark);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .page-header {
+      background: var(--navy) !important;
+      border-radius: 14px;
+      padding: 2rem 1.8rem !important;
+      margin-bottom: 1.8rem;
+    }
+    .page-header h1 { color: #F8F4EB !important; font-size: 1.9rem; }
+    .page-header p { color: rgba(240,235,224,0.85) !important; }
+
+    /* ── Rejilla de artículos para impresión ─────── */
+    .section { padding: 0 !important; }
+    .container { max-width: 100% !important; padding: 0 !important; }
+
+    .grid-3 {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1.2rem !important;
+    }
+
+    .blog-card {
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: none !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .blog-card-photo { height: 150px !important; }
+    .blog-card-body { padding: 1rem 1.1rem 1.2rem !important; }
+    .blog-card-body h3 { font-size: 1.12rem; }
+    .blog-card-body p { font-size: 0.86rem; }
+    .read-more { font-size: 0.8rem; }
+
+    /* La sección CTA arranca en página nueva para no partirse */
+    .cta-section {
+      break-before: page;
+      page-break-before: always;
+      background: var(--navy) !important;
+      border-radius: 14px;
+      padding: 2.4rem 1.8rem !important;
+      margin-top: 1.8rem;
+    }
+    .cta-section h2 { color: #F8F4EB !important; }
+    .cta-section p { color: rgba(240,235,224,0.85) !important; }
+    .btn-white { display: none !important; } /* un botón no tiene sentido en papel */
+
+    /* ── Pie del documento ───────────────────────── */
+    .print-foot {
+      margin-top: 1.6rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--stroke);
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      text-align: center;
+      line-height: 1.6;
+    }
+    .print-foot strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <main id="contenido">
+
+    <div class="print-head">
+      <img src="assets/images/logo.jpg" alt="Hipnosis Integral Rangel">
+      <div class="ph-text">
+        <strong>Hipnosis Integral Rangel</strong>
+        <span>Blog · Conocimiento y transformación</span>
+      </div>
+    </div>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Blog de bienestar y terapias integrales</h1>
+        <p>Contenido educativo y reflexivo sobre hipnoterapia clínica, terapias energéticas, salud emocional y crecimiento personal.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-hipnosis-clinica.jpg" alt="Sesión de hipnosis clínica"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Hipnosis clínica</span>
+              <h3>Hipnosis clínica: qué es y por qué no debes tenerle miedo</h3>
+              <p>Descubre cómo funciona realmente la hipnosis terapéutica, qué ocurre en tu cerebro durante una sesión y por qué es una herramienta poderosa para el cambio.</p>
+              <a class="read-more" href="blog/hipnosis-clinica-que-es.html">Leer artículo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-ansiedad.jpg" alt="Persona experimentando ansiedad"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Bienestar emocional</span>
+              <h3>Ansiedad crónica: aprende a reconocer las señales y recupera la calma</h3>
+              <p>La ansiedad no siempre se presenta como un ataque de pánico. Conoce sus señales físicas y emocionales más sutiles y qué herramientas terapéuticas pueden ayudarte.</p>
+              <a class="read-more" href="blog/ansiedad-senales-herramientas.html">Leer artículo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-reiki.jpg" alt="Sesión de Reiki y terapia energética"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Terapias energéticas</span>
+              <h3>Reiki: energía universal para el bienestar físico y emocional</h3>
+              <p>¿Qué ocurre realmente en una sesión de Reiki? Desmitificamos esta práctica de más de un siglo de historia y explicamos sus beneficios comprobados.</p>
+              <a class="read-more" href="blog/reiki-bienestar-energetico.html">Leer artículo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-biomagnetismo.jpg" alt="Tratamiento de biomagnetismo con imanes"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Terapias naturales</span>
+              <h3>Biomagnetismo: equilibrio natural desde el interior del cuerpo</h3>
+              <p>Aplicar imanes en puntos estratégicos del cuerpo tiene una explicación clara. Descubre en qué consiste el biomagnetismo y para qué condiciones puede ser de ayuda.</p>
+              <a class="read-more" href="blog/biomagnetismo-equilibrio-natural.html">Leer artículo →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-thetahealing.jpg" alt="Sesión de ThetaHealing"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Terapias energéticas</span>
+              <h3>ThetaHealing: transforma creencias limitantes desde el subconsciente</h3>
+              <p>Las creencias que limitan nuestra vida muchas veces son invisibles. ThetaHealing trabaja en el estado theta del cerebro para identificarlas y transformarlas.</p>
+              <a class="read-more" href="servicios/thetahealing.html">Conocer el servicio →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-habitos-mente.jpg" alt="Meditación y trabajo de hábitos mentales"></div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Crecimiento personal</span>
+              <h3>Cómo los hábitos se instalan en la mente y por qué cuesta tanto cambiarlos</h3>
+              <p>Entender la neurología detrás de los hábitos es el primer paso para transformarlos. Te explicamos cómo funciona tu cerebro y qué herramientas terapéuticas rompen el ciclo.</p>
+              <a class="read-more" href="blog/mitos-hipnosis-clinica.html">Leer artículo →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>¿Listo para dar el siguiente paso?</h2>
+        <p>El conocimiento es el primer paso. La acción es el que transforma. Agenda tu valoración hoy.</p>
+      </div>
+    </section>
+
+    <div class="print-foot">
+      <strong>Hipnosis Integral Rangel</strong> · Mente · Emoción · Cuerpo · Espíritu<br>
+      WhatsApp +1 (619) 581-1151 · Tijuana · Rosarito · Chula Vista (San Diego)<br>
+      © 2026 Hipnosis Integral Rangel · Todos los derechos reservados
+    </div>
+
+  </main>
+
+  <script>
+    // Auto-abrir el diálogo de impresión cuando todo esté listo.
+    (function () {
+      function waitForImages() {
+        const imgs = Array.from(document.images);
+        return Promise.all(imgs.map(img =>
+          img.complete ? Promise.resolve()
+            : new Promise(res => { img.onload = img.onerror = res; })
+        ));
+      }
+      const fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+      Promise.all([fonts, waitForImages()]).then(() => {
+        setTimeout(() => window.print(), 500);
+      });
+    })();
+  </script>
+</body>
+</html>
