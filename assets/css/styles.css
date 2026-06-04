@@ -932,7 +932,88 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 .footer-link:hover { color: var(--gold-light); }
 .footer-bottom { border-top-color: rgba(201,167,101,0.14); }
 
+/* ── Enlaces legales discretos del footer ────── */
+.footer-legal {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(180,200,200,0.55);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1.6;
+}
+.footer-legal a {
+  color: rgba(195,185,143,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal a:hover { color: var(--gold-light); }
+.footer-legal .sep { color: rgba(201,167,101,0.35); }
+
+/* ── Páginas legales (contenido de texto) ────── */
+.legal { max-width: 820px; }
+.legal-updated {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin: 0 0 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--stroke);
+}
+.legal h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin: 2.2rem 0 0.7rem;
+  letter-spacing: 0.01em;
+}
+.legal h2:first-of-type { margin-top: 0; }
+.legal p { margin: 0 0 1rem; color: var(--ink-muted); line-height: 1.75; }
+.legal ul { margin: 0 0 1rem; padding-left: 1.3rem; }
+.legal li { margin-bottom: 0.5rem; color: var(--ink-muted); line-height: 1.7; }
+.legal li::marker { color: var(--accent); }
+.legal strong { color: var(--ink); }
+.legal .legal-note {
+  background: var(--primary-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1rem 1.2rem;
+  margin: 0 0 1.4rem;
+}
+.legal .legal-note p { margin: 0; }
+.legal .legal-copyright {
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--stroke);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
 /* ── Foto perfil de la hipnoterapeuta ────────── */
+/* Foto principal del hero (panorámica) */
+.hero-photo {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  aspect-ratio: 16 / 7;
+  display: block;
+  border: 1px solid rgba(201,167,101,0.35);
+}
+/* Foto inspiradora panorámica (testimonios) */
+.inspira-photo {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  aspect-ratio: 21 / 9;
+  display: block;
+}
+@media (max-width: 640px) {
+  .hero-photo { aspect-ratio: 4 / 3; }
+  .inspira-photo { aspect-ratio: 4 / 3; }
+}
 .service-media { position: relative; }
 .service-photo {
   width: 100%;

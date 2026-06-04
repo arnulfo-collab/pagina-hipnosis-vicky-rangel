@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contáctanos para agendar tu sesión de hipnoterapia y terapias integrales. Respondemos en menos de 24 horas con total confidencialidad.">
-  <title>Contacto | RESET Hipnoterapia</title>
+  <title>Contacto | Hipnosis Integral Rangel</title>
   <link rel="canonical" href="https://reset-mx.com/contact.html">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -84,7 +84,6 @@
                 <option>Reiki</option>
                 <option>Access Bars / Acceso Conciencia</option>
                 <option>Biomagnetismo</option>
-                <option>Cursos y formación</option>
                 <option>No sé aún — quiero orientación</option>
               </select>
             </label>
@@ -189,7 +188,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="container">© 2025 Hipnosis Integral Rangel · Todos los derechos reservados</p>
+      <p class="footer-legal container">
+        <a href="aviso-legal.html">Aviso Legal</a>
+        <span class="sep">|</span>
+        <a href="politica-privacidad.html">Política de Privacidad</a>
+        <span class="sep">|</span>
+        <a href="politica-cookies.html">Política de Cookies</a>
+      </p>
+      <p class="container">© 2026 Hipnosis Integral Rangel · Todos los derechos reservados</p>
     </div>
   </footer>
 
@@ -208,12 +214,14 @@
         var num = form.getAttribute('data-wa');
         var nombre = (form.nombre && form.nombre.value || '').trim();
         var tel = (form.telefono && form.telefono.value || '').trim();
+        var email = (form.email && form.email.value || '').trim();
         var servicio = (form.servicio && form.servicio.value || '').trim();
         var mensaje = (form.mensaje && form.mensaje.value || '').trim();
         var txt = 'Hola Vicky, soy ' + nombre + '.';
         if (servicio) txt += ' Me interesa: ' + servicio + '.';
         if (mensaje) txt += ' ' + mensaje;
         if (tel) txt += ' (Mi teléfono: ' + tel + ')';
+        if (email) txt += ' (Mi correo: ' + email + ')';
         var url = 'https://wa.me/' + num + '?text=' + encodeURIComponent(txt);
         window.open(url, '_blank', 'noopener');
       });
