@@ -1088,3 +1088,150 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   .split--2-3 { grid-template-columns: 2fr 3fr; }
   .split__media { order: unset; }               /* respeta el orden del HTML */
 }
+
+/* ══════════════════════════════════════════════
+   HERO FULLBLEED — imagen de fondo con capas
+   ══════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 0;
+  background: #080A16;
+  text-align: center;
+}
+
+/* Capa de imagen con zoom lento al cargar */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/hero-consultorio.png');
+  background-size: cover;
+  background-position: center center;
+  animation: heroZoom 18s ease-out forwards;
+  transform-origin: center center;
+  z-index: 0;
+  will-change: transform;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* 3 capas de degradado apiladas */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom, rgba(8,10,22,0.55) 0%, rgba(8,10,22,0.18) 30%, transparent 55%),
+    radial-gradient(ellipse at 50% 45%, transparent 18%, rgba(8,10,22,0.82) 100%),
+    linear-gradient(to top, rgba(10,13,28,0.97) 0%, rgba(10,13,28,0.70) 45%, rgba(15,18,40,0.28) 75%);
+}
+
+/* Contenido anclado al fondo del hero */
+.hero .hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  text-shadow: 0 2px 18px rgba(4,6,16,0.7), 0 1px 4px rgba(4,6,16,0.5);
+}
+
+/* Eyebrow con líneas decorativas a los lados */
+.hero .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1.4rem;
+}
+.hero .hero-eyebrow::before,
+.hero .hero-eyebrow::after {
+  content: '';
+  flex: 0 0 52px;
+  height: 1px;
+  display: block;
+}
+.hero .hero-eyebrow::before {
+  background: linear-gradient(to right, transparent, rgba(224,193,134,0.65));
+}
+.hero .hero-eyebrow::after {
+  background: linear-gradient(to left, transparent, rgba(224,193,134,0.65));
+}
+
+/* Título: primera línea blanca, segunda cursiva dorada */
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+  line-height: 1.12;
+  color: #F8F4EB;
+  margin-bottom: 1.3rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+/* Párrafo al 72% de opacidad */
+.hero .hero-sub {
+  font-size: 1.1rem;
+  color: rgba(240,235,224,0.72);
+  max-width: 54ch;
+  margin: 0 auto 2.4rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+/* Botones */
+.hero .hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.hero .btn-outline {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+}
+.hero .btn-outline:hover {
+  background: rgba(224,193,134,0.14);
+}
+
+/* ── Animación fade + slide up escalonada ── */
+.hero-anim {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(0.3s + var(--i) * 0.22s);
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 960px) {
+  .hero { min-height: 100svh; }
+  .hero .hero-inner { padding-bottom: 4rem; }
+}
+@media (max-width: 640px) {
+  .hero .hero-inner { padding-bottom: 3rem; }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero .hero-eyebrow::before,
+  .hero .hero-eyebrow::after { flex-basis: 32px; }
+}
