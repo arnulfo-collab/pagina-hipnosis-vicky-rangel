@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em; /* Aumenta el tamaño de la fuente del encabezado h1 en un 400% */
+}
+
+form {
+  width: 50%; /* Aumenta el ancho del formulario al 70% del contenedor principal */
+  margin-top: 3%; /* Aumenta el margen superior del formulario al 4% del contenedor principal */
+}
+
+.form-control {
+  font-size: 1.2em; /* Aumenta el tamaño de la fuente de los campos de entrada en un 120% */
+  padding: 1.2%; /* Aumenta el relleno (padding) alrededor de los campos de entrada al 1% del contenedor */
+}
+
+.btn {
+  font-size: 1em; /* Aumenta el tamaño de la fuente del botón en un 140% */
+  padding: 1% 4%; /* Aumenta el relleno (padding) vertical y horizontal del botón al 2% y 4% respectivamente */
+}

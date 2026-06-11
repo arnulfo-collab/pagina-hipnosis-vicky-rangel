@@ -1,0 +1,19 @@
+body {
+  padding-top: 0px;
+}
+
+.logo {
+  margin-left: 0px;
+}
+.navbar {
+  margin-top: 0 !important;
+  background-color: blue;
+}
+.logo-container {
+  background-color: #ffffff;
+  width: 75px;
+  height: 60px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
