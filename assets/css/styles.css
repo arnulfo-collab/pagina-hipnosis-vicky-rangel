@@ -1031,14 +1031,23 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   border-radius: var(--radius-lg);
   z-index: -1;
 }
-.perfil-photo {
-  width: 100%;
+/* Recorte hasta la cintura: el wrapper controla altura y overflow */
+.perfil-crop {
+  overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  object-fit: cover;
-  aspect-ratio: 4 / 5;
-  display: block;
+  aspect-ratio: 3 / 4;
 }
+
+.perfil-photo {
+  width: 178%;
+  margin-left: -39%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .perfil-frame { position: relative; }
 .perfil-frame::after {
   content: '';
