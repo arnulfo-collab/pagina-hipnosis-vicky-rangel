@@ -1045,10 +1045,11 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 .perfil-crop .perfil-photo {
   position: absolute;
   top: 0;
-  left: -39%;
-  width: 178%;
-  height: auto;
-  display: block;
+  left: 0;
+  right: 0;
+  height: 220%;
+  object-fit: cover;
+  object-position: 35% top;
   border-radius: 0;
   box-shadow: none;
 }
