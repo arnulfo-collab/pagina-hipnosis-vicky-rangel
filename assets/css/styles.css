@@ -1031,17 +1031,22 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   border-radius: var(--radius-lg);
   z-index: -1;
 }
-/* Recorte hasta la cintura: el wrapper controla altura y overflow */
+/* Recorte hasta la cintura: padding-bottom fuerza la altura independiente del grid */
 .perfil-crop {
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: 0;
+  padding-bottom: 133%;  /* 133% del ancho = proporción 3:4 retrato */
 }
 
 .perfil-photo {
+  position: absolute;
+  top: 0;
+  left: -39%;
   width: 178%;
-  margin-left: -39%;
   height: auto;
   display: block;
   border-radius: 0;
