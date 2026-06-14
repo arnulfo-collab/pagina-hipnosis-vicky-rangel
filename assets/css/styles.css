@@ -1042,7 +1042,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   padding-bottom: 133%;  /* 133% del ancho = proporción 3:4 retrato */
 }
 
-.perfil-photo {
+.perfil-crop .perfil-photo {
   position: absolute;
   top: 0;
   left: -39%;
