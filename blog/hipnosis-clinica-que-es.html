@@ -17,10 +17,7 @@
     .article-body li { margin-bottom:0.4rem; }
     .article-meta { font-size:0.85rem; color:var(--ink-muted); margin-bottom:2rem; display:flex; gap:1.2rem; flex-wrap:wrap; align-items:center; }
     .article-tag { background:var(--primary-light); color:var(--primary); border-radius:999px; padding:0.25rem 0.8rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-    .article-img { background:var(--bg-warm); border:2px dashed var(--stroke); border-radius:var(--radius-lg); min-height:340px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:var(--primary); text-align:center; padding:2rem; margin-bottom:2.5rem; }
-    .article-img svg { opacity:0.4; }
-    .article-img strong { font-size:0.92rem; color:var(--ink-muted); }
-    .article-img span { font-size:0.8rem; color:var(--ink-muted); max-width:24ch; line-height:1.5; }
+    .article-img { width:100%; border-radius:var(--radius-lg); object-fit:cover; aspect-ratio:16/7; display:block; margin-bottom:2.5rem; box-shadow:var(--shadow); }
     .highlight-box { background:var(--bg-soft); border-left:4px solid var(--accent); border-radius:0 var(--radius) var(--radius) 0; padding:1.2rem 1.4rem; margin:1.5rem 0; }
     .highlight-box p { margin:0; font-style:italic; }
     .back-link { display:inline-flex; align-items:center; gap:0.4rem; color:var(--primary); font-size:0.88rem; font-weight:600; margin-bottom:1.5rem; }
@@ -74,11 +71,7 @@
           <span>8 min de lectura</span>
         </div>
 
-        <div class="article-img">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <strong>Imagen del artículo</strong>
-          <span>Foto de sesión terapéutica — ambiente cálido y profesional</span>
-        </div>
+        <img class="article-img" src="../assets/images/blog-hipnosis-clinica.jpg" alt="Sesión de hipnosis clínica en ambiente cálido y profesional">
 
         <p>La palabra "hipnosis" evoca imágenes de péndulos que se balancean, personas que caen dormidas de inmediato o actos de ilusionismo en un escenario. Sin embargo, la hipnosis clínica que se practica en el contexto terapéutico es radicalmente distinta a esa representación de la cultura popular, y entenderla puede abrirte la puerta a una de las herramientas de cambio más poderosas que existen.</p>
 

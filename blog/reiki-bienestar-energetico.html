@@ -17,10 +17,7 @@
     .article-body li { margin-bottom:0.4rem; }
     .article-meta { font-size:0.85rem; color:var(--ink-muted); margin-bottom:2rem; display:flex; gap:1.2rem; flex-wrap:wrap; }
     .article-tag { background:var(--primary-light); color:var(--primary); border-radius:999px; padding:0.25rem 0.8rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-    .article-img { background:var(--bg-warm); border:2px dashed var(--stroke); border-radius:var(--radius-lg); min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:var(--primary); text-align:center; padding:2rem; margin-bottom:2.5rem; }
-    .article-img svg { opacity:0.4; }
-    .article-img strong { font-size:0.92rem; color:var(--ink-muted); }
-    .article-img span { font-size:0.8rem; color:var(--ink-muted); max-width:24ch; line-height:1.5; }
+    .article-img { width:100%; border-radius:var(--radius-lg); object-fit:cover; aspect-ratio:16/7; display:block; margin-bottom:2.5rem; box-shadow:var(--shadow); }
     .highlight-box { background:var(--bg-soft); border-left:4px solid var(--accent); border-radius:0 var(--radius) var(--radius) 0; padding:1.2rem 1.4rem; margin:1.5rem 0; }
     .highlight-box p { margin:0; font-style:italic; }
     .back-link { display:inline-flex; align-items:center; gap:0.4rem; color:var(--primary); font-size:0.88rem; font-weight:600; margin-bottom:1.5rem; }
@@ -65,11 +62,7 @@
           <span>Marzo 2025</span><span>·</span><span>9 min de lectura</span>
         </div>
 
-        <div class="article-img">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-          <strong>Imagen del artículo</strong>
-          <span>Manos de terapeuta canalizando energía — sesión de Reiki, luz cálida</span>
-        </div>
+        <img class="article-img" src="../assets/images/blog-reiki.jpg" alt="Sesión de Reiki — manos canalizando energía para el bienestar">
 
         <p>El Reiki es quizás la terapia energética más conocida a nivel mundial, y al mismo tiempo una de las más malentendidas. Para algunos es una práctica espiritual profunda; para otros, una pseudociencia sin fundamento. La realidad, como siempre, es más matizada: el Reiki es una disciplina con más de cien años de historia, una metodología estructurada y un conjunto creciente de evidencia sobre sus beneficios en el bienestar emocional y la reducción del estrés.</p>
 

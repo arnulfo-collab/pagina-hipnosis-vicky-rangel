@@ -17,10 +17,7 @@
     .article-body li { margin-bottom:0.5rem; }
     .article-meta { font-size:0.85rem; color:var(--ink-muted); margin-bottom:2rem; display:flex; gap:1.2rem; flex-wrap:wrap; }
     .article-tag { background:var(--primary-light); color:var(--primary); border-radius:999px; padding:0.25rem 0.8rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-    .article-img { background:var(--bg-warm); border:2px dashed var(--stroke); border-radius:var(--radius-lg); min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:var(--primary); text-align:center; padding:2rem; margin-bottom:2.5rem; }
-    .article-img svg { opacity:0.4; }
-    .article-img strong { font-size:0.92rem; color:var(--ink-muted); }
-    .article-img span { font-size:0.8rem; color:var(--ink-muted); max-width:24ch; line-height:1.5; }
+    .article-img { width:100%; border-radius:var(--radius-lg); object-fit:cover; aspect-ratio:16/7; display:block; margin-bottom:2.5rem; box-shadow:var(--shadow); }
     .signal-box { background:var(--bg-soft); border-radius:var(--radius); padding:1.4rem 1.6rem; margin:1.2rem 0; border-left:4px solid var(--accent); }
     .signal-box h3 { font-size:1.05rem; color:var(--ink); margin:0 0 0.5rem; }
     .signal-box p { color:var(--ink-muted); margin:0; font-size:0.97rem; }
@@ -68,11 +65,7 @@
           <span>Febrero 2025</span><span>·</span><span>8 min de lectura</span>
         </div>
 
-        <div class="article-img">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <strong>Imagen del artículo</strong>
-          <span>Persona reflexiva — momento de autoconocimiento, luz cálida</span>
-        </div>
+        <img class="article-img" src="../assets/images/blog-habitos-mente.jpg" alt="Persona en momento de reflexión y autoconocimiento">
 
         <p>Una de las barreras más grandes para buscar apoyo terapéutico es la incertidumbre: "¿realmente lo necesito?" o "quizás no es para tanto". En una cultura que aún asocia pedir ayuda con debilidad, muchas personas esperan demasiado antes de actuar, dejando que situaciones manejables se conviertan en problemas crónicos.</p>
         <p>No es necesario estar en crisis para beneficiarse de un proceso terapéutico. De hecho, las mejores intervenciones son las preventivas: las que se hacen antes de que el malestar se instale como norma.</p>

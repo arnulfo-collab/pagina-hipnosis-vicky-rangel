@@ -17,10 +17,7 @@
     .article-body li { margin-bottom:0.5rem; }
     .article-meta { font-size:0.85rem; color:var(--ink-muted); margin-bottom:2rem; display:flex; gap:1.2rem; flex-wrap:wrap; }
     .article-tag { background:var(--primary-light); color:var(--primary); border-radius:999px; padding:0.25rem 0.8rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-    .article-img { background:var(--bg-warm); border:2px dashed var(--stroke); border-radius:var(--radius-lg); min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; color:var(--primary); text-align:center; padding:2rem; margin-bottom:2.5rem; }
-    .article-img svg { opacity:0.4; }
-    .article-img strong { font-size:0.92rem; color:var(--ink-muted); }
-    .article-img span { font-size:0.8rem; color:var(--ink-muted); max-width:24ch; line-height:1.5; }
+    .article-img { width:100%; border-radius:var(--radius-lg); object-fit:cover; aspect-ratio:16/7; display:block; margin-bottom:2.5rem; box-shadow:var(--shadow); }
     .myth-card { background:var(--bg-soft); border-radius:var(--radius); padding:1.4rem 1.6rem; margin:1.2rem 0; border-left:4px solid var(--primary); }
     .myth-card .myth-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--primary); margin-bottom:0.4rem; }
     .myth-card h3 { font-size:1.05rem; color:var(--ink); margin:0 0 0.5rem; }
@@ -68,11 +65,7 @@
           <span>Enero 2025</span><span>·</span><span>7 min de lectura</span>
         </div>
 
-        <div class="article-img">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <strong>Imagen del artículo</strong>
-          <span>Ambiente de sesión terapéutica — tranquilo y profesional</span>
-        </div>
+        <img class="article-img" src="../assets/images/svc-hipnosis-ondas.png" alt="Mitos sobre la hipnosis clínica — sesión terapéutica profesional">
 
         <p>La hipnosis clínica es una de las herramientas terapéuticas más poderosas y, al mismo tiempo, una de las más incomprendidas. Décadas de representaciones distorsionadas en el cine, la televisión y los espectáculos de entretenimiento han dejado en el imaginario colectivo una imagen que poco tiene que ver con la realidad terapéutica. Veamos los cinco mitos más comunes y lo que la evidencia dice al respecto.</p>
 
