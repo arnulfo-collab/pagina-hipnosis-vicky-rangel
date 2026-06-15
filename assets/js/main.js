@@ -64,54 +64,36 @@ if ('IntersectionObserver' in window && reveals.length) {
   reveals.forEach(revealEl);
 }
 
-// Lenis smooth scroll + GSAP ScrollTrigger parallax (integrados)
+// Parallax suave en imágenes — scroll nativo + GSAP ScrollTrigger
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var targets = document.querySelectorAll('.service-photo, .blog-card-photo');
+  if (!targets.length) return;
 
-  var ls = document.createElement('script');
-  ls.src = 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
-  ls.onload = function () {
-    var lenis = new Lenis({ lerp: 0.12, smoothWheel: true });
-
-    // Arrancar RAF inmediatamente — sin esto Lenis captura el scroll pero no anima
-    // hasta que GSAP cargue, haciendo la página sentirse pegada
-    var rafId;
-    (function tick(t) { rafId = requestAnimationFrame(tick); lenis.raf(t); }(0));
-
-    var targets = document.querySelectorAll('.service-photo, .blog-card-photo');
-    if (!targets.length) return; // solo Lenis RAF, sin GSAP
-
-    var s1 = document.createElement('script');
-    s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
-    s1.onload = function () {
-      var s2 = document.createElement('script');
-      s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
-      s2.onload = function () {
-        // Transferir control del RAF a GSAP ticker para sincronía con ScrollTrigger
-        cancelAnimationFrame(rafId);
-        gsap.registerPlugin(ScrollTrigger);
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-        gsap.ticker.lagSmoothing(0);
-        targets.forEach(function (img) {
-          gsap.fromTo(img,
-            { scale: 1 },
-            {
-              scale: 1.07,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: img,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1.5
-              }
+  var s1 = document.createElement('script');
+  s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+  s1.onload = function () {
+    var s2 = document.createElement('script');
+    s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+    s2.onload = function () {
+      gsap.registerPlugin(ScrollTrigger);
+      targets.forEach(function (img) {
+        gsap.fromTo(img,
+          { scale: 1 },
+          {
+            scale: 1.07,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: img,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.5
             }
-          );
-        });
-      };
-      document.head.appendChild(s2);
+          }
+        );
+      });
     };
-    document.head.appendChild(s1);
+    document.head.appendChild(s2);
   };
-  document.head.appendChild(ls);
+  document.head.appendChild(s1);
 })();
