@@ -1056,7 +1056,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 
 .perfil-crop .perfil-photo {
   position: absolute;
-  top: 0;
+  top: -4%;
   left: 0;
   right: 0;
   width: 100%;
@@ -1065,6 +1065,10 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   object-position: center top;
   border-radius: 0;
   box-shadow: none;
+}
+
+.perfil-crop .perfil-photo.alt-crop {
+  top: -11%;
 }
 
 .perfil-frame { position: relative; }
