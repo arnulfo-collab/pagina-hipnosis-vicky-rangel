@@ -97,3 +97,69 @@ if ('IntersectionObserver' in window && reveals.length) {
   };
   document.head.appendChild(s1);
 })();
+
+// Animated Counters for Stats
+const statNumbers = document.querySelectorAll('.stat-number');
+if ('IntersectionObserver' in window && statNumbers.length > 0) {
+  const animateCounter = (el) => {
+    const targetText = el.innerText;
+    const targetNum = parseInt(targetText.replace(/\D/g, ''));
+    const suffix = targetText.replace(/[0-9]/g, ''); // e.g. "+" or "%"
+    
+    if (isNaN(targetNum)) return;
+    
+    let currentNum = 0;
+    const duration = 2000; // 2 seconds
+    const stepTime = Math.abs(Math.floor(duration / targetNum));
+    
+    const timer = setInterval(() => {
+      currentNum += 1;
+      el.innerText = currentNum + suffix;
+      if (currentNum >= targetNum) {
+        clearInterval(timer);
+        el.innerText = targetText; // Ensure exact match at the end
+      }
+    }, stepTime);
+  };
+
+  const statsObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(el => statsObserver.observe(el));
+}
+
+// Magnetic Buttons
+const magneticButtons = document.querySelectorAll('.btn-cta, .btn-primary');
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  magneticButtons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+// Glow Tracking for Cards
+const glowCards = document.querySelectorAll('.card, .service-card, .feature-card, .impact-card');
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.addEventListener('mousemove', e => {
+    glowCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}

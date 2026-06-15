@@ -1,63 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Páginas principales -->
   <url>
-    <loc>https://reset-mx.com/</loc>
+    <loc>https://hipnosisrangel.com/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/about.html</loc>
+    <loc>https://hipnosisrangel.com/about.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/services.html</loc>
+    <loc>https://hipnosisrangel.com/services.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/contact.html</loc>
+    <loc>https://hipnosisrangel.com/contact.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/testimonials.html</loc>
+    <loc>https://hipnosisrangel.com/testimonials.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/blog.html</loc>
+    <loc>https://hipnosisrangel.com/blog.html</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- Servicios individuales -->
   <url>
-    <loc>https://reset-mx.com/servicios/hipnoterapia-mexicali.html</loc>
+    <loc>https://hipnosisrangel.com/servicios/hipnosis-clinica.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/servicios/biodescodificacion.html</loc>
+    <loc>https://hipnosisrangel.com/servicios/masaje-linfatico.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/metodo-yuen.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/thetahealing.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/reiki.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/access-bars.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/biomagnetismo.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/servicios/hipnoterapia-mexicali.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/servicios/capacitacion-habilidades.html</loc>
+    <loc>https://hipnosisrangel.com/servicios/biodescodificacion.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/blog/mitos-hipnosis-clinica.html</loc>
+    <loc>https://hipnosisrangel.com/servicios/capacitacion-habilidades.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://hipnosisrangel.com/blog/hipnosis-clinica-que-es.html</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/blog/senales-necesitas-terapia.html</loc>
+    <loc>https://hipnosisrangel.com/blog/ansiedad-senales-herramientas.html</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://reset-mx.com/blog/primera-sesion-hipnoterapia.html</loc>
+    <loc>https://hipnosisrangel.com/blog/reiki-bienestar-energetico.html</loc>
     <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/blog/biomagnetismo-equilibrio-natural.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/blog/mitos-hipnosis-clinica.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/blog/primera-sesion-hipnoterapia.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/blog/senales-necesitas-terapia.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://hipnosisrangel.com/aviso-legal.html</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/politica-privacidad.html</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hipnosisrangel.com/politica-cookies.html</loc>
+    <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>

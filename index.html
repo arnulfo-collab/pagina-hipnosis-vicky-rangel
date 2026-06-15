@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,8 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script defer src="assets/js/main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="assets/js/pendulum.js"></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hipnoterapia y Terapias Integrales | Hipnosis Integral Rangel">
   <meta property="og:description" content="Reinicia tu mente, libera tus bloqueos y recupera tu equilibrio con un proceso humano y personalizado.">
@@ -70,6 +72,7 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div id="hero-canvas-container" aria-hidden="true"></div>
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-inner">
@@ -212,7 +215,7 @@
         </div>
         <div class="grid-3">
           <article class="blog-card reveal">
-            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-hipnosis-clinica.jpg" alt="Sesión de hipnosis clínica"></div>
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-hipnosis-clinica.png" alt="Sesión de hipnosis clínica"></div>
             <div class="blog-card-body">
               <span class="blog-tag">Hipnosis clínica</span>
               <h3>Hipnosis clínica: qué es y por qué no debes tenerle miedo</h3>
@@ -221,7 +224,7 @@
             </div>
           </article>
           <article class="blog-card reveal">
-            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-ansiedad.jpg" alt="Persona experimentando ansiedad"></div>
+            <div class="blog-card-img has-photo"><img class="blog-card-photo" src="assets/images/blog-ansiedad.png" alt="Persona experimentando ansiedad"></div>
             <div class="blog-card-body">
               <span class="blog-tag">Bienestar emocional</span>
               <h3>Ansiedad crónica: señales que tu cuerpo envía y cómo atenderlas</h3>

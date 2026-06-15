@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://reset-mx.com/sitemap.xml
+Sitemap: https://hipnosisrangel.com/sitemap.xml

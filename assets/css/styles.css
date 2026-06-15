@@ -39,6 +39,16 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ul, ol { padding-left: 1.3rem; }
 
+/* ── CUSTOM SCROLLBAR ────────────────────────── */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-soft); }
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--bg-soft);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--primary-dark); }
+
 .container {
   width: min(1140px, 92vw);
   margin: 0 auto;
@@ -55,9 +65,10 @@ ul, ol { padding-left: 1.3rem; }
 /* ── NAVIGATION ──────────────────────────────── */
 .topbar {
   position: sticky; top: 0; z-index: 900;
-  background: rgba(253,250,246,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--stroke);
+  background: rgba(253,250,246,0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226,218,202,0.6);
 }
 
 .nav-wrap {
@@ -1110,7 +1121,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
    ══════════════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 85svh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -1252,12 +1263,18 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   .hero .hero-eyebrow::after { flex-basis: 32px; }
 }
 
-/* ── Hero H1 — degradado gold en cursiva ──── */
+/* ── Hero H1 — degradado gold en cursiva con shimmer ──── */
 .hero h1 em {
-  background: linear-gradient(100deg, #ffffff 0%, var(--accent) 100%);
+  background: linear-gradient(100deg, var(--gold-light) 0%, #ffffff 50%, var(--accent) 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
 }
 
 /* ── Sección oscura con inversión de colores ─ */
@@ -1285,3 +1302,97 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 .section-bg-dark .step-connector {
   background: rgba(255, 255, 255, 0.14);
 }
+
+/* ══════════════════════════════════════════════
+   HERO 3D CANVAS
+   ══════════════════════════════════════════════ */
+#hero-canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+#hero-canvas-container canvas {
+  display: block;
+}
+
+/* ══════════════════════════════════════════════
+   MICRO-ANIMACIONES EXTRAS
+   ══════════════════════════════════════════════ */
+
+/* Glow pulsante en WhatsApp */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.whatsapp-float a {
+  animation: pulse-glow 2.5s infinite;
+}
+
+/* Gradiente animado en botones CTA */
+.btn-cta {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark), var(--primary));
+  background-size: 200% auto;
+  transition: transform 0.2s, box-shadow 0.2s, background-position 0.3s;
+}
+.btn-cta:hover {
+  background-position: right center;
+  box-shadow: 0 8px 24px rgba(168,92,56,0.4);
+}
+
+/* Hover suave 3D en cards */
+.card, .service-card, .feature-card, .impact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::before, .service-card::before, .feature-card::before, .impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 0) var(--mouse-y, 0), 
+    rgba(201,167,101,0.06),
+    transparent 40%
+  );
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover::before, .service-card:hover::before, .feature-card:hover::before, .impact-card:hover::before {
+  opacity: 1;
+}
+
+.card:hover, .service-card:hover, .feature-card:hover, .impact-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: rgba(201,167,101,0.3);
+}
+
+/* Ensure card content stays above the glow */
+.card > *, .service-card > *, .feature-card > *, .impact-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Linea dorada animada bajo labels */
+.section-label {
+  position: relative;
+  display: inline-block;
+}
+.section-label::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.6s ease 0.3s;
+}
+.reveal.visible .section-label::after {
+  width: 100%;
+}
+
