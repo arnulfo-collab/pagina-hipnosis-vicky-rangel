@@ -1059,9 +1059,10 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   top: 0;
   left: 0;
   right: 0;
-  height: 220%;
+  width: 100%;
+  height: 140%;
   object-fit: cover;
-  object-position: 35% top;
+  object-position: center top;
   border-radius: 0;
   box-shadow: none;
 }
@@ -1314,6 +1315,43 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 }
 #hero-canvas-container canvas {
   display: block;
+}
+
+/* CSS Pendulum */
+#hero-pendulum {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  animation: pendulumSwing 2.8s ease-in-out infinite alternate;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes pendulumSwing {
+  from { transform: rotate(-14deg); }
+  to   { transform: rotate(14deg); }
+}
+
+.pendulum-chain {
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(138,111,63,0), #8a6f3f, #c9a765, #e0c186, #c9a765, #8a6f3f);
+}
+
+.pendulum-bob {
+  width: clamp(320px, 38vw, 600px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.75)) drop-shadow(0 2px 12px rgba(201,167,101,0.4));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero-pendulum { animation: none; }
 }
 
 /* ══════════════════════════════════════════════
