@@ -63,3 +63,53 @@ if ('IntersectionObserver' in window && reveals.length) {
 } else {
   reveals.forEach(revealEl);
 }
+
+// Lenis smooth scroll + GSAP ScrollTrigger parallax (integrados)
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var ls = document.createElement('script');
+  ls.src = 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
+  ls.onload = function () {
+    var lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    var targets = document.querySelectorAll('.service-photo, .blog-card-photo');
+
+    if (targets.length) {
+      // Páginas con imágenes: cargar GSAP + ScrollTrigger y sincronizar con Lenis
+      var s1 = document.createElement('script');
+      s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+      s1.onload = function () {
+        var s2 = document.createElement('script');
+        s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+        s2.onload = function () {
+          gsap.registerPlugin(ScrollTrigger);
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+          gsap.ticker.lagSmoothing(0);
+          targets.forEach(function (img) {
+            gsap.fromTo(img,
+              { scale: 1 },
+              {
+                scale: 1.07,
+                ease: 'none',
+                scrollTrigger: {
+                  trigger: img,
+                  start: 'top bottom',
+                  end: 'bottom top',
+                  scrub: 1.5
+                }
+              }
+            );
+          });
+        };
+        document.head.appendChild(s2);
+      };
+      document.head.appendChild(s1);
+    } else {
+      // Páginas sin imágenes: solo Lenis con RAF manual
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  };
+  document.head.appendChild(ls);
+})();

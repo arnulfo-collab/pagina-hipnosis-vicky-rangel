@@ -549,7 +549,7 @@ h2, h3, h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
 .blog-card-img svg { opacity: 0.4; }
 .blog-card-img span { font-size: 0.75rem; color: var(--ink-muted); max-width: 20ch; line-height: 1.4; }
 .blog-card-img.has-photo { padding: 0; min-height: 0; }
-.blog-card-photo { width: 100%; height: 210px; object-fit: cover; display: block; }
+.blog-card-photo { width: 100%; height: 210px; object-fit: cover; display: block; clip-path: inset(0); }
 
 .blog-card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
 .blog-tag {
@@ -1022,6 +1022,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   object-fit: cover;
   aspect-ratio: 4 / 3;
   display: block;
+  clip-path: inset(0 round var(--radius-lg));
 }
 .service-media::after {
   content: '';
@@ -1249,4 +1250,38 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
   .hero .hero-eyebrow::before,
   .hero .hero-eyebrow::after { flex-basis: 32px; }
+}
+
+/* ── Hero H1 — degradado gold en cursiva ──── */
+.hero h1 em {
+  background: linear-gradient(100deg, #ffffff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Sección oscura con inversión de colores ─ */
+.section-bg-dark {
+  background: var(--ink);
+}
+.section-bg-dark .section-label {
+  color: var(--accent);
+  opacity: 1;
+}
+.section-bg-dark .section-title {
+  color: #fff;
+}
+.section-bg-dark h3 {
+  color: rgba(255, 255, 255, 0.9);
+}
+.section-bg-dark p {
+  color: rgba(255, 255, 255, 0.62);
+}
+.section-bg-dark .step-dot {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: transparent;
+}
+.section-bg-dark .step-connector {
+  background: rgba(255, 255, 255, 0.14);
 }
