@@ -1138,7 +1138,6 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero-consultorio.png');
   background-size: cover;
   background-position: center center;
   animation: heroZoom 18s ease-out forwards;
@@ -1258,10 +1257,12 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 
 /* ── Responsive ─────────────────────────── */
 @media (max-width: 960px) {
-  .hero { min-height: 100svh; }
+  .hero { min-height: 78svh; }
   .hero .hero-inner { padding-bottom: 4rem; }
 }
 @media (max-width: 640px) {
+  .hero { min-height: 72svh; }
+  .pendulum-bob { width: 240px; }
   .hero .hero-inner { padding-bottom: 3rem; }
   .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
   .hero .hero-eyebrow::before,
