@@ -1174,6 +1174,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
   padding-bottom: 5rem;
   text-shadow: 0 2px 18px rgba(4,6,16,0.7), 0 1px 4px rgba(4,6,16,0.5);
 }
+.hero .btn { text-shadow: none; }
 
 /* Eyebrow con líneas decorativas a los lados */
 .hero .hero-eyebrow {
