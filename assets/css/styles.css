@@ -203,7 +203,6 @@ ul, ol { padding-left: 1.3rem; }
 
 .btn-cta {
   background: var(--primary); color: #fff;
-  box-shadow: 0 8px 24px rgba(168,92,56,0.3);
 }
 .btn-cta:hover { background: var(--primary-dark); }
 
@@ -889,7 +888,7 @@ footer { background: #0D2418; color: #C8DDD0; }
   color: var(--navy-deep);
   font-weight: 700;
   letter-spacing: 0.04em;
-  box-shadow: 0 8px 22px rgba(168,132,63,0.32);
+  box-shadow: none;
 }
 .btn-cta:hover { background: var(--gradient-gold); opacity: 0.92; }
 .nav-cta { color: var(--navy-deep); }
@@ -1380,7 +1379,7 @@ footer { background: var(--navy-deep); color: #C9C3D0; }
 }
 .btn-cta:hover {
   background-position: right center;
-  box-shadow: 0 8px 24px rgba(168,92,56,0.4);
+  box-shadow: none;
 }
 
 /* Hover suave 3D en cards */
